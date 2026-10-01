@@ -21,14 +21,18 @@ Treat walking times and venue operating status as data that may need verificatio
 
 - Make the experience modern, clean, fast, and mobile-first for students on the go.
 - Provide a fun, quick randomizer interaction, such as a shuffle, spinning reel, wheel, or swipeable card stack.
-- Support filters for halal, vegetarian, budget (`$`, `$$`, `$$$`), and walking time (under 5 minutes or 5-10 minutes). Add cuisine, dietary, and vibe filters as the available data supports them.
-- Show a selected spot's name, location, estimated walking time from a relevant SMU hub (such as Li Ka Shing Library or SMU Connexion), price range, and a Google Maps link.
+- Support filters for halal, vegetarian, budget (`$`, `$$`, `$$$`), cuisine, and vibe. Defer walking-time filters until verified hub-specific estimates are available.
+- For halal or vegetarian filters, include `YES` entries. Exclude `NO` and `UNKNOWN`; include `SUITABLE_NOT_CERTIFIED` only when the user explicitly opts in. When both diets are selected, a spot must match both.
+- Cuisine lock choices must use only the source PDF's section headers: Western / Fast Food, Middle Eastern, Thai / Vietnamese, Chinese, Vegetarian, Japanese, Korean, Local, Desserts, Cafes, and Breakfast (like a local).
+- Group similar source vibe tags into a concise set of user-facing choices, and match those choices against the original tags without replacing or discarding them.
+- Keep filter selection and results as separate steps. `Next` chooses a random matching spot and opens the shortlist view; `Back to filters` preserves the current filter selections.
+- Show a selected spot's name, location, price range, dietary status from the source list, and Google Maps links. Walking-time estimates are deferred from the initial experience.
 - Provide a lock option so users can keep a cuisine type fixed while randomizing the venue.
 - Make controls accessible with semantic elements, useful labels, keyboard support, and touch targets suitable for mobile.
 
 ## Technical Guidance
 
-- Follow the stack already established in the repository. The frontend, backend, database, and data source have not yet been selected; do not assume React, Next.js, Vue, Node.js, Supabase, Firebase, Prisma, or a live Places API without repository or user confirmation.
+- Frontend: React, Vite, and TypeScript. The app currently uses a local TypeScript data module; no backend or database has been selected.
 - A local JSON dataset is suitable for an initial mock-data implementation. Keep venue data separate from UI components so it can later be replaced by an API.
 - Prefer modular, lightweight, well-typed TypeScript where TypeScript is in use.
 - Keep business logic for SMU-specific hub and walking-time estimates clear, and document non-obvious assumptions concisely.
