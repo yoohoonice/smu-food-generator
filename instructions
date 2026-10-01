@@ -1,0 +1,34 @@
+# SMU Food Spot Generator
+
+## Project Objective
+
+Build a web or mobile app that helps Singapore Management University (SMU) students decide where to eat in and around campus. Users can filter food spots by budget, walking time, cuisine, dietary needs, and vibe, then randomly select a suitable option to reduce decision fatigue.
+
+## SMU Context
+
+Primary campus hubs include SMU Connexion, Li Ka Shing Library, School of Accountancy (SOA), School of Computing and Information Systems (SCIS), School of Economics and Social Sciences (SOE/SOSS), and Yong Pung How School of Law (YPHSL).
+
+Consider these areas and venues when building or populating the app's food-spot data:
+
+- On campus: Koufu at SMU Connexion, SMU Connexion, Braek, and SMU Subway.
+- Nearby transit and underground access: Marina Bay Link and MRT concourse options around Bencoolen, Bras Basah, and Dhoby Ghaut.
+- Nearby malls and food centres: Plaza Singapura, Bugis Junction, Sunshine Plaza, Fortune Centre, Funan, Cathay (subject to its current status), and City Hall.
+- Hawker and budget options: Waterloo Street, Albert Street, Bras Basah Complex, Parklane Mall, Fortune Centre, and Sunshine Plaza.
+
+Treat walking times and venue operating status as data that may need verification; do not present estimates as live or authoritative directions.
+
+## Product Requirements
+
+- Make the experience modern, clean, fast, and mobile-first for students on the go.
+- Provide a fun, quick randomizer interaction, such as a shuffle, spinning reel, wheel, or swipeable card stack.
+- Support filters for halal, vegetarian, budget (`$`, `$$`, `$$$`), and walking time (under 5 minutes or 5-10 minutes). Add cuisine, dietary, and vibe filters as the available data supports them.
+- Show a selected spot's name, location, estimated walking time from a relevant SMU hub (such as Li Ka Shing Library or SMU Connexion), price range, and a Google Maps link.
+- Provide a lock option so users can keep a cuisine type fixed while randomizing the venue.
+- Make controls accessible with semantic elements, useful labels, keyboard support, and touch targets suitable for mobile.
+
+## Technical Guidance
+
+- Follow the stack already established in the repository. The frontend, backend, database, and data source have not yet been selected; do not assume React, Next.js, Vue, Node.js, Supabase, Firebase, Prisma, or a live Places API without repository or user confirmation.
+- A local JSON dataset is suitable for an initial mock-data implementation. Keep venue data separate from UI components so it can later be replaced by an API.
+- Prefer modular, lightweight, well-typed TypeScript where TypeScript is in use.
+- Keep business logic for SMU-specific hub and walking-time estimates clear, and document non-obvious assumptions concisely.
