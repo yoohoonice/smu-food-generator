@@ -12,6 +12,8 @@ The vibe filter groups similar source tags into eight choices: Casual & Convenie
 
 Run `npm install`, then `npm run dev` to start the local app. Use `npm run build` to type-check and create a production build.
 
+GitHub Pages deployment is configured through `.github/workflows/deploy.yml`. In repository **Settings > Pages**, set the source to **GitHub Actions**. After the workflow completes on `main`, the app is available at `https://yoohoonice.github.io/smu-food-generator/` independently of the local development server.
+
 ## Venue data
 
 `data/food-spots.ts` exports the typed `foodSpots` dataset, transcribed from the source PDF in `data/source`. It contains 100 venues and preserves multiple Google Maps links for venues with multiple listed locations.
